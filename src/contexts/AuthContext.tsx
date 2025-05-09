@@ -43,7 +43,7 @@ const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => 
           return;
         }
         
-        const res = await axios.get(`${API_URL}/api/users/me`, {
+        const res = await axios.get(`https://learning-hub-ciio.onrender.com/api/users/me`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         
@@ -60,7 +60,7 @@ const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => 
   
   const login = async (email: string, password: string) => {
     try {
-      const res = await axios.post(`${API_URL}/api/auth/login`, { email, password });
+      const res = await axios.post(`https://learning-hub-ciio.onrender.com/api/auth/login`, { email, password });
       localStorage.setItem('token', res.data.token);
       setUser(res.data.user);
     } catch (error) {
@@ -70,7 +70,7 @@ const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => 
   
   const register = async (name: string, email: string, password: string) => {
     try {
-      const res = await axios.post(`${API_URL}/api/auth/register`, { name, email, password });
+      const res = await axios.post(`https://learning-hub-ciio.onrender.com/api/auth/register`, { name, email, password });
       localStorage.setItem('token', res.data.token);
       setUser(res.data.user);
     } catch (error) {

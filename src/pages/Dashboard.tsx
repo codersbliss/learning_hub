@@ -37,7 +37,7 @@ const Dashboard: React.FC = () => {
     try {
       setLoading(true);
       const token = localStorage.getItem('token');
-      const res = await axios.get(`${API_URL}/api/content?sources=${filters.join(',')}`, {
+      const res = await axios.get(`https://learning-hub-ciio.onrender.com/api/content?sources=${filters.join(',')}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       
@@ -52,7 +52,7 @@ const Dashboard: React.FC = () => {
   const fetchSavedContent = async () => {
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.get(`${API_URL}/api/content/saved`, {
+      const res = await axios.get(`https://learning-hub-ciio.onrender.com/api/content/saved`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       

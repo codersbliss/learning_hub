@@ -49,7 +49,7 @@ const UserManagement: React.FC = () => {
     try {
       setLoading(true);
       const token = localStorage.getItem('token');
-      const res = await axios.get(`${API_URL}/api/admin/users`, {
+      const res = await axios.get(`https://learning-hub-ciio.onrender.com/api/admin/users`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       
@@ -78,7 +78,7 @@ const UserManagement: React.FC = () => {
     
     try {
       const token = localStorage.getItem('token');
-      await axios.patch(`${API_URL}/api/admin/users/${editingUser._id}`, editFormData, {
+      await axios.patch(`https://learning-hub-ciio.onrender.com/api/admin/users/${editingUser._id}`, editFormData, {
         headers: { Authorization: `Bearer ${token}` }
       });
       
@@ -93,7 +93,7 @@ const UserManagement: React.FC = () => {
   const handleToggleStatus = async (userId: string, currentStatus: boolean) => {
     try {
       const token = localStorage.getItem('token');
-      await axios.patch(`${API_URL}/api/admin/users/${userId}/toggle-status`, {
+      await axios.patch(`https://learning-hub-ciio.onrender.com/api/admin/users/${userId}/toggle-status`, {
         isActive: !currentStatus
       }, {
         headers: { Authorization: `Bearer ${token}` }
@@ -113,7 +113,7 @@ const UserManagement: React.FC = () => {
     
     try {
       const token = localStorage.getItem('token');
-      await axios.delete(`${API_URL}/api/admin/users/${userId}`, {
+      await axios.delete(`https://learning-hub-ciio.onrender.com/api/admin/users/${userId}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       

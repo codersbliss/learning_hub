@@ -37,7 +37,7 @@ const Stats: React.FC = () => {
     try {
       setLoading(true);
       const token = localStorage.getItem('token');
-      const res = await axios.get(`${API_URL}/api/admin/stats/content`, {
+      const res = await axios.get(`https://learning-hub-ciio.onrender.com/api/admin/stats/content`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       
@@ -53,7 +53,7 @@ const Stats: React.FC = () => {
     try {
       setLoading(true);
       const token = localStorage.getItem('token');
-      const res = await axios.get(`${API_URL}/api/admin/stats/credits`, {
+      const res = await axios.get(`https://learning-hub-ciio.onrender.com/api/admin/stats/credits`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       

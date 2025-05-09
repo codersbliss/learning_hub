@@ -22,7 +22,7 @@ const AdminDashboard: React.FC = () => {
     const fetchDashboardStats = async () => {
       try {
         const token = localStorage.getItem('token');
-        const res = await axios.get(`${API_URL}/api/admin/dashboard-stats`, {
+        const res = await axios.get(`https://learning-hub-ciio.onrender.com/api/admin/dashboard-stats`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         

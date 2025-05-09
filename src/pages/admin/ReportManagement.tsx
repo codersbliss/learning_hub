@@ -38,7 +38,7 @@ const ReportManagement: React.FC = () => {
     try {
       setLoading(true);
       const token = localStorage.getItem('token');
-      const res = await axios.get(`${API_URL}/api/admin/reports`, {
+      const res = await axios.get(`https://learning-hub-ciio.onrender.com/api/admin/reports`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       
@@ -58,7 +58,7 @@ const ReportManagement: React.FC = () => {
   const handleApproveReport = async (reportId: string) => {
     try {
       const token = localStorage.getItem('token');
-      await axios.patch(`${API_URL}/api/admin/reports/${reportId}/approve`, {}, {
+      await axios.patch(`https://learning-hub-ciio.onrender.com/api/admin/reports/${reportId}/approve`, {}, {
         headers: { Authorization: `Bearer ${token}` }
       });
       
@@ -73,7 +73,7 @@ const ReportManagement: React.FC = () => {
   const handleRejectReport = async (reportId: string) => {
     try {
       const token = localStorage.getItem('token');
-      await axios.patch(`${API_URL}/api/admin/reports/${reportId}/reject`, {}, {
+      await axios.patch(`https://learning-hub-ciio.onrender.com/api/admin/reports/${reportId}/reject`, {}, {
         headers: { Authorization: `Bearer ${token}` }
       });
       

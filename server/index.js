@@ -235,7 +235,7 @@ const initializeDB = async () => {
 // Routes
 
 // Auth Routes
-app.post('/api/auth/register', async (req, res) => {
+app.post('https://learning-hub-ciio.onrender.com/api/auth/register', async (req, res) => {
   try {
     const { name, email, password } = req.body;
     
@@ -283,7 +283,7 @@ app.post('/api/auth/register', async (req, res) => {
 });
 
 
-app.post('/api/auth/login', async (req, res) => {
+app.post('https://learning-hub-ciio.onrender.com/api/auth/login', async (req, res) => {
   try {
     const { email, password } = req.body;
     
@@ -323,7 +323,7 @@ app.post('/api/auth/login', async (req, res) => {
 });
 
 // User Routes
-app.get('/api/users/me', authMiddleware, async (req, res) => {
+app.get('https://learning-hub-ciio.onrender.com/api/users/me', authMiddleware, async (req, res) => {
   try {
     const user = await User.findById(req.user._id).select('-password');
     res.json(user);
@@ -333,7 +333,7 @@ app.get('/api/users/me', authMiddleware, async (req, res) => {
 });
 
 // Content Routes
-app.get('/api/content', authMiddleware, async (req, res) => {
+app.get('https://learning-hub-ciio.onrender.com/api/content', authMiddleware, async (req, res) => {
   try {
     const { sources } = req.query;
     let filter = {};
@@ -349,7 +349,7 @@ app.get('/api/content', authMiddleware, async (req, res) => {
   }
 });
 
-app.get('/api/content/saved', authMiddleware, async (req, res) => {
+app.get('https://learning-hub-ciio.onrender.com/api/content/saved', authMiddleware, async (req, res) => {
   try {
     const savedContent = await SavedContent.find({ user: req.user._id })
       .populate('content')
@@ -362,7 +362,7 @@ app.get('/api/content/saved', authMiddleware, async (req, res) => {
   }
 });
 
-app.post('/api/content/save', authMiddleware, async (req, res) => {
+app.post('https://learning-hub-ciio.onrender.com/api/content/save', authMiddleware, async (req, res) => {
   try {
     const { contentId } = req.body;
     
@@ -406,7 +406,7 @@ app.post('/api/content/save', authMiddleware, async (req, res) => {
   }
 });
 
-app.post('/api/content/share', authMiddleware, async (req, res) => {
+app.post('https://learning-hub-ciio.onrender.com/api/content/share', authMiddleware, async (req, res) => {
   try {
     const { contentId } = req.body;
     
@@ -434,7 +434,7 @@ app.post('/api/content/share', authMiddleware, async (req, res) => {
   }
 });
 
-app.post('/api/content/report', authMiddleware, async (req, res) => {
+app.post('https://learning-hub-ciio.onrender.com/api/content/report', authMiddleware, async (req, res) => {
   try {
     const { contentId, reason } = req.body;
     
@@ -480,7 +480,7 @@ app.post('/api/content/report', authMiddleware, async (req, res) => {
 });
 
 // Credit Routes
-app.get('/api/credits/history', authMiddleware, async (req, res) => {
+app.get('https://learning-hub-ciio.onrender.com/api/credits/history', authMiddleware, async (req, res) => {
   try {
     const transactions = await CreditTransaction.find({ user: req.user._id })
       .sort({ createdAt: -1 });
@@ -491,7 +491,7 @@ app.get('/api/credits/history', authMiddleware, async (req, res) => {
   }
 });
 
-app.post('/api/credits/spend', authMiddleware, async (req, res) => {
+app.post('https://learning-hub-ciio.onrender.com/api/credits/spend', authMiddleware, async (req, res) => {
   try {
     const { amount, description, itemId } = req.body;
     
@@ -522,7 +522,7 @@ app.post('/api/credits/spend', authMiddleware, async (req, res) => {
 });
 
 // Admin Routes
-app.get('/api/admin/dashboard-stats', authMiddleware, adminMiddleware, async (req, res) => {
+app.get('https://learning-hub-ciio.onrender.com/api/admin/dashboard-stats', authMiddleware, adminMiddleware, async (req, res) => {
   try {
     const totalUsers = await User.countDocuments();
     const activeUsers = await User.countDocuments({ isActive: true });
@@ -553,7 +553,7 @@ app.get('/api/admin/dashboard-stats', authMiddleware, adminMiddleware, async (re
   }
 });
 
-app.get('/api/admin/reports', authMiddleware, adminMiddleware, async (req, res) => {
+app.get('https://learning-hub-ciio.onrender.com/api/admin/reports', authMiddleware, adminMiddleware, async (req, res) => {
   try {
     const reports = await Report.find()
       .sort({ createdAt: -1 })
@@ -566,7 +566,7 @@ app.get('/api/admin/reports', authMiddleware, adminMiddleware, async (req, res) 
   }
 });
 
-app.patch('/api/admin/reports/:id/approve', authMiddleware, adminMiddleware, async (req, res) => {
+app.patch('https://learning-hub-ciio.onrender.com/api/admin/reports/:id/approve', authMiddleware, adminMiddleware, async (req, res) => {
   try {
     const report = await Report.findByIdAndUpdate(
       req.params.id,
@@ -587,7 +587,7 @@ app.patch('/api/admin/reports/:id/approve', authMiddleware, adminMiddleware, asy
   }
 });
 
-app.patch('/api/admin/reports/:id/reject', authMiddleware, adminMiddleware, async (req, res) => {
+app.patch('https://learning-hub-ciio.onrender.com/api/admin/reports/:id/reject', authMiddleware, adminMiddleware, async (req, res) => {
   try {
     const report = await Report.findByIdAndUpdate(
       req.params.id,
@@ -605,7 +605,7 @@ app.patch('/api/admin/reports/:id/reject', authMiddleware, adminMiddleware, asyn
   }
 });
 
-app.get('/api/admin/users', authMiddleware, adminMiddleware, async (req, res) => {
+app.get('https://learning-hub-ciio.onrender.com/api/admin/users', authMiddleware, adminMiddleware, async (req, res) => {
   try {
     const users = await User.find().select('-password').sort({ createdAt: -1 });
     res.json(users);
@@ -614,7 +614,7 @@ app.get('/api/admin/users', authMiddleware, adminMiddleware, async (req, res) =>
   }
 });
 
-app.patch('/api/admin/users/:id', authMiddleware, adminMiddleware, async (req, res) => {
+app.patch('https://learning-hub-ciio.onrender.com/api/admin/users/:id', authMiddleware, adminMiddleware, async (req, res) => {
   try {
     const { name, email, role, credits } = req.body;
     
@@ -634,7 +634,7 @@ app.patch('/api/admin/users/:id', authMiddleware, adminMiddleware, async (req, r
   }
 });
 
-app.patch('/api/admin/users/:id/toggle-status', authMiddleware, adminMiddleware, async (req, res) => {
+app.patch('https://learning-hub-ciio.onrender.com/api/admin/users/:id/toggle-status', authMiddleware, adminMiddleware, async (req, res) => {
   try {
     const { isActive } = req.body;
     
@@ -654,7 +654,7 @@ app.patch('/api/admin/users/:id/toggle-status', authMiddleware, adminMiddleware,
   }
 });
 
-app.delete('/api/admin/users/:id', authMiddleware, adminMiddleware, async (req, res) => {
+app.delete('https://learning-hub-ciio.onrender.com/api/admin/users/:id', authMiddleware, adminMiddleware, async (req, res) => {
   try {
     const user = await User.findByIdAndDelete(req.params.id);
     
@@ -673,7 +673,7 @@ app.delete('/api/admin/users/:id', authMiddleware, adminMiddleware, async (req, 
   }
 });
 
-app.get('/api/admin/stats/content', authMiddleware, adminMiddleware, async (req, res) => {
+app.get('https://learning-hub-ciio.onrender.com/api/admin/stats/content', authMiddleware, adminMiddleware, async (req, res) => {
   try {
     const mostViewed = await Content.find().sort({ views: -1 }).limit(5).select('title views');
     const mostSaved = await Content.find().sort({ saves: -1 }).limit(5).select('title saves');
@@ -691,7 +691,7 @@ app.get('/api/admin/stats/content', authMiddleware, adminMiddleware, async (req,
   }
 });
 
-app.get('/api/admin/stats/credits', authMiddleware, adminMiddleware, async (req, res) => {
+app.get('https://learning-hub-ciio.onrender.com/api/admin/stats/credits', authMiddleware, adminMiddleware, async (req, res) => {
   try {
     const creditsEarned = await CreditTransaction.aggregate([
       { $match: { type: 'earn' } },

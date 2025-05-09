@@ -74,14 +74,14 @@ cd learning-hub
 cd backend
 npm install
 ```
-# Create a .env file and add your environment variables:
+Create a .env file and add your environment variables:
 
 ```bash
 MONGO_URI=your_mongo_connection_string
 JWT_SECRET=your_jwt_secret
 PORT=5000
 ```
-# Run the server:
+Run the server:
 
 ```bash
 npm start

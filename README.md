@@ -95,7 +95,7 @@ npm install
 npm run dev  # for Vite
 ```
 
-## Or
+ Or
 
 ```bash
 npm run start  # for Create React App
@@ -114,14 +114,14 @@ firebase deploy
 
 ## Backend
 
-# Deployed on Google Cloud Run.
+Deployed on Google Cloud Run.
 
 
 ---
 
 ### 📄 License
 
-# This project is for educational purposes. All APIs and external content are used under respective fair use/public terms
+This project is for educational purposes. All APIs and external content are used under respective fair use/public terms
 
 ### 👤 Author
 

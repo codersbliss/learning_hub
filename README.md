@@ -65,7 +65,7 @@ Build a community hub where users can discover educational content, interact wit
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/creator-dashboard.git
+git clone https://github.com/yourusername/learning-hub.git
 cd learning-hub
 ```
 ### 2. Set up the Backend
@@ -115,7 +115,6 @@ firebase deploy
 ## Backend
 
 Deployed on Google Cloud Run.
-
 
 ---
 

@@ -1,4 +1,4 @@
-# 📊 Creator Dashboard
+# 📊 Community learning hub 
 
 A full-stack **MERN** web application for building a community hub where users can discover educational content, interact with a curated feed, and earn credit points for engagement. Includes user roles (User/Admin), credit tracking, and analytics tools.
 
@@ -66,7 +66,7 @@ Build a community hub where users can discover educational content, interact wit
 
 ```bash
 git clone https://github.com/yourusername/creator-dashboard.git
-cd creator-dashboard 
+cd learning-hub
 ```
 ### 2. Set up the Backend
 

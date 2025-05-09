@@ -71,9 +71,62 @@ cd creator-dashboard
 ### 2. Set up the Backend
 
 ```bash
-git clone https://github.com/yourusername/creator-dashboard.git
-cd creator-dashboard
+cd backend
+npm install
 ```
+## Create a .env file and add your environment variables:
+
+```bash
+MONGO_URI=your_mongo_connection_string
+JWT_SECRET=your_jwt_secret
+PORT=5000
+```
+## Run the server:
+
+```bash
+npm start
+```
+
+### 3. Set up the Frontend
+
+```bash
+cd frontend
+npm install
+npm run dev  # for Vite
+```
+
+## Or
+
+```bash
+npm run start  # for Create React App
+```
+
+---
+
+### ☁️ Deployment
+
+## Frontend
+
+```bash
+npm run build
+firebase deploy
+```
+
+## Backend
+
+# Deployed on Google Cloud Run.
+
+
+---
+
+### 📄 License
+
+# This project is for educational purposes. All APIs and external content are used under respective fair use/public terms
+
+### 👤 Author
+
+- Name: Prateek Chandra
+- Project: Assignment 2 – Community learning hub
 
 
 

@@ -64,13 +64,13 @@ Build a community hub where users can discover educational content, interact wit
 
 ### 1. Clone the Repository
 
-``bash
+```bash
 git clone https://github.com/yourusername/creator-dashboard.git
-cd creator-dashboard ``
+cd creator-dashboard 
 
 ### 2. Set up the Backend
 
-``bash
+
 git clone https://github.com/yourusername/creator-dashboard.git
-cd creator-dashboard ``
+cd creator-dashboard 
 

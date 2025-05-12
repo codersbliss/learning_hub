@@ -1,4 +1,4 @@
-export const API_URL = 'https://learning-hub-ciio.onrender.com';
+export const API_URL = 'http://localhost:5000';
 
 // Social Media Feed Settings
 export const FEED_SOURCES = ['twitter', 'reddit', 'linkedin'];

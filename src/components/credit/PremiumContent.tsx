@@ -60,7 +60,7 @@ const PremiumContent: React.FC = () => {
     
     try {
       const token = localStorage.getItem('token');
-      await axios.post(`https://learning-hub-ciio.onrender.com/api/credits/spend`, {
+      await axios.post(`${API_URL}/api/credits/spend`, {
         amount: item.cost,
         description: `Unlocked ${item.title}`,
         itemId: item.id

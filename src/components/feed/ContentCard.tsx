@@ -28,7 +28,7 @@ const ContentCard: React.FC<ContentCardProps> = ({ content, refreshFeed }) => {
   const handleSave = async () => {
     try {
       const token = localStorage.getItem('token');
-      await axios.post(`https://learning-hub-ciio.onrender.com/api/content/save`, { contentId: content._id }, {
+      await axios.post(`${API_URL}/api/content/save`, { contentId: content._id }, {
         headers: { Authorization: `Bearer ${token}` }
       });
       
@@ -43,7 +43,7 @@ const ContentCard: React.FC<ContentCardProps> = ({ content, refreshFeed }) => {
   const handleShare = async () => {
     try {
       const token = localStorage.getItem('token');
-      await axios.post(`https://learning-hub-ciio.onrender.com/api/content/share`, { contentId: content._id }, {
+      await axios.post(`${API_URL}/api/content/share`, { contentId: content._id }, {
         headers: { Authorization: `Bearer ${token}` }
       });
       
@@ -62,7 +62,7 @@ const ContentCard: React.FC<ContentCardProps> = ({ content, refreshFeed }) => {
     
     try {
       const token = localStorage.getItem('token');
-      await axios.post(`https://learning-hub-ciio.onrender.com/api/content/report`, { contentId: content._id }, {
+      await axios.post(`${API_URL}/api/content/report`, { contentId: content._id }, {
         headers: { Authorization: `Bearer ${token}` }
       });
       

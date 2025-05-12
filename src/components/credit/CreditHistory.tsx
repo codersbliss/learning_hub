@@ -21,7 +21,7 @@ const CreditHistory: React.FC = () => {
     const fetchTransactions = async () => {
       try {
         const token = localStorage.getItem('token');
-        const res = await axios.get(`https://learning-hub-ciio.onrender.com/api/credits/history`, {
+        const res = await axios.get(`${API_URL}/api/credits/history`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         

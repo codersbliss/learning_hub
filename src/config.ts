@@ -1,5 +1,5 @@
 // API Configuration
-export const API_URL = 'http://localhost:5000';
+export const API_URL = 'https://learning-hub-05xj.onrender.com';
 
 // Social Media Feed Settings
 export const FEED_SOURCES = ['twitter', 'reddit', 'linkedin'];
